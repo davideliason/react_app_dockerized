@@ -1,20 +1,21 @@
 # Use official Node runtime
-FROM node:9.2.0
+FROM node:7.8.0
 
-# The base node image sets a very verbose log level.
+# Override the base log level (info).
 ENV NPM_CONFIG_LOGLEVEL warn
 
-# Copy all local project files into the image.
+# Install and configure `serve`.
+RUN npm install -g serve
+CMD serve -s build
+EXPOSE 5000
+
+# Install all dependencies of the current project.
+COPY package.json package.json
+COPY npm-shrinkwrap.json npm-shrinkwrap.json
+RUN npm install
+
+# Copy all local files into the image.
 COPY . .
 
 # Build for production.
 RUN npm run build --production
-
-# Install serve module for simple HTTP server to run the application.
-RUN npm install -g serve
-
-# Set the command to start the node server when container launches
-CMD serve -s build
-
-# Make port 5000 available to the world outside this container
-EXPOSE 5000

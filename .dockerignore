@@ -1,0 +1,9 @@
+# Itmes to not go into Docker container:
+Dockerfile
+.dockerignore
+.gitignore
+README.md
+
+# These can also be excluded:
+build
+node_modules
