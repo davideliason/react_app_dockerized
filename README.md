@@ -22,7 +22,10 @@ After creating the Dockerfile, I then built the container image:
 ```
  $ docker build -t react_app_dockerized .
 ```
-
+At this point, the app successfully ran after this command:
+```
+$ docker run -p 5000:5000 react_app_dockerized
+```
 ### Lessons Learned:
 Shrinkwrapping dependency libraries will ensure consistency between devs.
 
