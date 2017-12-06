@@ -27,6 +27,11 @@ At this point, the app successfully ran after this command:
 $ docker run -p 5000:5000 react_app_dockerized
 ```
 ### Lessons Learned:
-Shrinkwrapping dependency libraries will ensure consistency between devs.
+Shrinkwrapping dependency libraries will ensure consistency between devs. After making changes, I rec'd error that the port was already allocated. To remedy this, I found out which process was running and then killed it:
+```
+$ docker ps
+$ docker kill 4e05b88cd3c7
+
+```
 
 ### Conclusion:
