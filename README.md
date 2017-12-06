@@ -9,7 +9,7 @@ The goal is to dockerize a React app - this is the first step before more comple
 
     - Created React app using CRA
     - Ejected to update build files $ npm run eject
-    - Shrinkwrapped dependencies 
+    - Shrinkwrapped dependencies:
 
 ```
     $npm prune
