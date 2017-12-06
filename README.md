@@ -18,6 +18,11 @@ The goal is to dockerize a React app - this is the first step before more comple
     $npm shrinkwrap --dev
 ```
 
+After creating the Dockerfile, I then built the container image:
+```
+ $ docker build -t react_app_dockerized .
+```
+
 ### Lessons Learned:
 Shrinkwrapping dependency libraries will ensure consistency between devs.
 
